@@ -1,0 +1,94 @@
+/* ========== PROJECT HERO ========== */
+.project-hero {
+  margin-top: 60px;
+}
+
+.project-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.project-meta p {
+  font-size: 1.1rem;
+}
+
+#project-description {
+  color: var(--color-text);
+}
+
+#project-date {
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+#project-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== PROJECT CONTENT ========== */
+.project-content {
+  margin-top: 80px;
+}
+
+#project-content-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+/* ========== OTHER PROJECTS ========== */
+.other-projects {
+  margin-top: 120px;
+}
+
+.other-projects h2 {
+  margin-bottom: 50px;
+}
+
+/* ========== RESPONSIVE PROJECT ========== */
+@media (max-width: 992px) {
+  .project-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  #project-image {
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-hero {
+    margin-top: 30px;
+  }
+
+  .project-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-content,
+  .other-projects {
+    margin-top: 90px;
+  }
+
+  #project-content-text {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
