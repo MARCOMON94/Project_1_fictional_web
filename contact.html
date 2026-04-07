@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/logos/circle.svg" alt="Circle logo">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#projects">Projects</a></li>
+        <li><a href="./index.html#services">Services</a></li>
+      </ul>
+
+      <a href="./contact.html" class="contact-btn">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-page">
+      <h1>Contact Us</h1>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-group full-width">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="8" placeholder="Write your message here"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="./assets/logos/circle.svg" alt="Circle logo">
+      <p>2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
+    </div>
+
+    <div class="footer-right">
+      <a href="#">Team</a>
+      <a href="#">Services</a>
+      <a href="#">About Us</a>
+      <a href="#">Press</a>
+      <a href="#">Projects</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="./js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* ========== CONTACT PAGE ========== */
+.contact-page {
+  margin-top: 60px;
+}
+
+.contact-page h1 {
+  margin-bottom: 60px;
+  max-width: 500px;
+}
+
+/* ========== FORM ========== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 300px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(107, 112, 141, 0.1);
+  padding: 22px 20px;
+  font-size: 1rem;
+  color: var(--color-dark);
+  font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(107, 112, 141, 0.7);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* ========== STATES ========== */
+.input-error {
+  border: 2px solid #c62828 !important;
+}
+
+.error-message {
+  color: #c62828;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .contact-page {
+    margin-top: 30px;
+  }
+
+  .contact-page h1 {
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    gap: 30px;
+  }
+
+  .form-row {
+    gap: 30px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 18px 16px;
+  }
+}
