@@ -41,3 +41,22 @@ function renderProjects(projects) {
     `;
   });
 }
+
+const backToTopButton = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.opacity = "1";
+    backToTopButton.style.pointerEvents = "auto";
+  } else {
+    backToTopButton.style.opacity = "0";
+    backToTopButton.style.pointerEvents = "none";
+  }
+});
+
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
