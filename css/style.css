@@ -107,7 +107,7 @@ p {
 .header {
   width: min(83%, var(--container-width));
   margin: 0 auto;
-  padding: 18px 0 10px;
+  padding: 28px 0 12px;
 }
 
 .navbar {
@@ -140,13 +140,12 @@ p {
 
 /* ========== REUSABLE PROJECT CARDS ========== */
 .projects-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
-  flex-wrap: wrap;
 }
 
 .project-card {
-  flex: 1 1 260px;
   background-color: var(--color-white);
   box-shadow: var(--card-shadow);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -184,7 +183,18 @@ p {
   text-decoration: underline;
 }
 
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
 
+@media (max-width: 760px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
@@ -278,18 +288,42 @@ p {
     font-size: 2rem;
   }
 
-  .navbar {
+  .header {
+    width: min(88%, var(--container-width));
+    padding: 22px 0 10px;
+  }
+
+  section {
+    width: min(88%, var(--container-width));
+  }
+
+  .footer {
+    width: min(88%, var(--container-width));
     flex-direction: column;
-    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    gap: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
   }
 
   .contact-btn {
-    align-self: flex-start;
+    align-self: auto;
+    padding: 13px 22px;
   }
 
   .newsletter {
@@ -298,10 +332,6 @@ p {
 
   .input-wrapper {
     min-width: 100%;
-  }
-
-  .footer {
-    flex-direction: column;
   }
 
   .footer-right {
