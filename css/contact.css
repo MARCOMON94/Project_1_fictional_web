@@ -1,36 +1,44 @@
 /* ========== CONTACT PAGE ========== */
 .contact-page {
-  margin-top: 60px;
+  margin-top: 26px;
 }
 
 .contact-page h1 {
-  margin-bottom: 60px;
-  max-width: 500px;
+  margin-bottom: 54px;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
+  line-height: 1.05;
 }
 
-/* ========== FORM ========== */
+/* ========== FORM LAYOUT ========== */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 34px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
 }
 
 .form-row {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex: 1 1 300px;
+  min-width: 0;
 }
 
 .form-group label {
   font-weight: 500;
   color: var(--color-text);
+  font-size: 1.05rem;
 }
 
 .required-mark {
@@ -41,70 +49,54 @@
 .form-group input,
 .form-group textarea {
   width: 100%;
-  border: none;
+  border: 2px solid transparent;
   outline: none;
   background-color: rgba(107, 112, 141, 0.1);
-  padding: 22px 20px;
+  padding: 20px 18px;
   font-size: 1rem;
   color: var(--color-dark);
   font-family: inherit;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(107, 112, 141, 0.7);
+  color: rgba(107, 112, 141, 0.72);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 180px;
+  min-height: 190px;
 }
 
-.full-width {
-  width: 100%;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(7, 42, 200, 0.35);
+  background-color: rgba(107, 112, 141, 0.08);
 }
 
 .submit-btn {
+  grid-column: 1 / -1;
   width: 100%;
   border: none;
   cursor: pointer;
   font-family: inherit;
   font-size: 1rem;
+  padding: 18px 24px;
 }
 
 /* ========== STATES ========== */
 .input-error {
-  border: 2px solid #c62828 !important;
+  border-color: #c62828 !important;
 }
 
 .error-message {
   color: #c62828;
   font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .contact-page {
-    margin-top: 30px;
-  }
-
-  .contact-page h1 {
-    margin-bottom: 40px;
-  }
-
-  .contact-form {
-    gap: 30px;
-  }
-
-  .form-row {
-    gap: 30px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 18px 16px;
-  }
+  margin-top: 4px;
 }
 
 .form-group.is-valid .required-mark {
@@ -113,10 +105,45 @@
 
 .form-group.is-valid input,
 .form-group.is-valid textarea {
-  border: 2px solid transparent;
+  border-color: transparent;
 }
 
 .form-group input:invalid,
 .form-group textarea:invalid {
   box-shadow: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .contact-page {
+    margin-top: 18px;
+  }
+
+  .contact-page h1 {
+    margin-bottom: 36px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .form-row {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .submit-btn {
+    grid-column: auto;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 18px 16px;
+  }
 }
