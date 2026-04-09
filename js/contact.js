@@ -65,22 +65,30 @@ function validateField(field, showMessage) {
   removeError(field);
 
   let isValid = true;
-  let message = "";
+  let errorMessage = "";
 
-  if (value === "") {
+  if (field.id === "full-name" && value === "") {
     isValid = false;
-    message = "This field is required";
-  } else if (field.id === "email" && !isValidEmail(value)) {
+    errorMessage = "Please, complete the field NAME with your name";
+  } else if (field.id === "email") {
+    if (value === "" || !isValidEmail(value)) {
+      isValid = false;
+      errorMessage = "Invalid email";
+    }
+  } else if (field.id === "phone" && value === "") {
     isValid = false;
-    message = "Please enter a valid email";
+    errorMessage = "Please enter your phone number";
+  } else if (field.id === "message" && value === "") {
+    isValid = false;
+    errorMessage = "";
   }
 
   if (!isValid) {
     field.classList.add("input-error");
     formGroup.classList.remove("is-valid");
 
-    if (showMessage) {
-      showError(field, message);
+    if (showMessage && errorMessage !== "") {
+      showError(field, errorMessage);
     }
   } else {
     field.classList.remove("input-error");
