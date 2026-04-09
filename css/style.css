@@ -247,35 +247,48 @@ p {
 /* ========== FOOTER ========== */
 .footer {
   width: min(88%, var(--container-width));
-  margin: 120px auto 40px;
+  margin: 124px auto 44px;
+  padding: 4px 0 4px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 72px;
 }
 
 .footer-left {
-  max-width: 260px;
+  max-width: 245px;
+}
+
+.footer-logo {
+  display: inline-block;
 }
 
 .footer-left img {
-  width: 100px;
-  margin-bottom: 20px;
+  width: 70px;
+  margin-bottom: 18px;
+}
+
+.footer-left p {
+  color: #000000;
+  line-height: 1.42;
+  font-size: 0.96rem;
 }
 
 .footer-right {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 20px 60px;
+  gap: 34px 86px;
 }
 
 .footer-right a {
-  color: var(--color-text);
+  color: #000000;
+  font-size: 0.96rem;
   transition: var(--transition);
 }
 
 .footer-right a:hover {
   color: var(--color-primary);
+  text-decoration: underline;
 }
 
 /* ========== RESPONSIVE ========== */

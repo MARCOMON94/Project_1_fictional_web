@@ -1,12 +1,12 @@
 /* ========== CONTACT PAGE ========== */
 .contact-page {
-  margin-top: 26px;
+  margin-top: 22px;
 }
 
 .contact-page h1 {
-  margin-bottom: 54px;
-  font-size: clamp(3.2rem, 5vw, 4.8rem);
-  line-height: 1.05;
+  margin-bottom: 48px;
+  font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+  line-height: 1.06;
 }
 
 /* ========== FORM LAYOUT ========== */
@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 28px;
-  row-gap: 34px;
+  row-gap: 30px;
 }
 
 .full-width {
@@ -31,14 +31,14 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
 }
 
 .form-group label {
   font-weight: 500;
   color: var(--color-text);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
 }
 
 .required-mark {
@@ -52,8 +52,8 @@
   border: 2px solid transparent;
   outline: none;
   background-color: rgba(107, 112, 141, 0.1);
-  padding: 20px 18px;
-  font-size: 1rem;
+  padding: 18px 18px;
+  font-size: 0.95rem;
   color: var(--color-dark);
   font-family: inherit;
   transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -65,11 +65,12 @@
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: rgba(107, 112, 141, 0.72);
+  font-size: 0.95rem;
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 190px;
+  min-height: 170px;
 }
 
 .form-group input:focus,
@@ -84,8 +85,8 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 1rem;
-  padding: 18px 24px;
+  font-size: 0.98rem;
+  padding: 17px 24px;
 }
 
 /* ========== STATES ========== */
@@ -95,7 +96,7 @@
 
 .error-message {
   color: #c62828;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   margin-top: 4px;
 }
 
@@ -116,16 +117,16 @@
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .contact-page {
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .contact-page h1 {
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
 
   .contact-form {
     grid-template-columns: 1fr;
-    row-gap: 26px;
+    row-gap: 24px;
   }
 
   .full-width {
@@ -135,7 +136,7 @@
   .form-row {
     grid-column: auto;
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 24px;
   }
 
   .submit-btn {
@@ -144,6 +145,6 @@
 
   .form-group input,
   .form-group textarea {
-    padding: 18px 16px;
+    padding: 16px 16px;
   }
 }
