@@ -33,6 +33,11 @@
   color: var(--color-text);
 }
 
+.required-mark {
+  color: #c62828;
+  font-weight: 700;
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -100,4 +105,18 @@
   .form-group textarea {
     padding: 18px 16px;
   }
+}
+
+.form-group.is-valid .required-mark {
+  opacity: 0;
+}
+
+.form-group.is-valid input,
+.form-group.is-valid textarea {
+  border: 2px solid transparent;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+  box-shadow: none;
 }

@@ -48,7 +48,7 @@ ul {
 }
 
 section {
-  width: min(86%, var(--container-width));
+  width: min(88%, var(--container-width));
   margin: 0 auto;
 }
 
@@ -105,9 +105,9 @@ p {
 
 /* ========== HEADER / NAVBAR ========== */
 .header {
-  width: min(83%, var(--container-width));
+  width: min(88%, var(--container-width));
   margin: 0 auto;
-  padding: 28px 0 12px;
+  padding: 30px 0 14px;
 }
 
 .navbar {
@@ -246,7 +246,7 @@ p {
 
 /* ========== FOOTER ========== */
 .footer {
-  width: min(83%, var(--container-width));
+  width: min(88%, var(--container-width));
   margin: 120px auto 40px;
   display: flex;
   justify-content: space-between;
@@ -289,32 +289,32 @@ p {
   }
 
   .header {
-    width: min(88%, var(--container-width));
+    width: min(90%, var(--container-width));
     padding: 22px 0 10px;
   }
 
   section {
-    width: min(88%, var(--container-width));
+    width: min(90%, var(--container-width));
   }
 
   .footer {
-    width: min(88%, var(--container-width));
+    width: min(90%, var(--container-width));
     flex-direction: column;
   }
 
   .navbar {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     gap: 18px;
   }
 
   .nav-links {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
     justify-content: center;
-    width: auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 22px;
   }
 
   .nav-links a {
@@ -323,7 +323,7 @@ p {
 
   .contact-btn {
     align-self: auto;
-    padding: 13px 22px;
+    padding: 13px 20px;
   }
 
   .newsletter {

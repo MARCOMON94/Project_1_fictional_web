@@ -60,3 +60,31 @@ backToTopButton.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+const newsletterForm = document.getElementById("newsletter-form");
+const newsletterEmail = document.getElementById("newsletter-email");
+
+if (newsletterForm && newsletterEmail) {
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const emailValue = newsletterEmail.value.trim();
+
+    if (!emailValue) {
+      alert("Please enter your email.");
+      return;
+    }
+
+    if (!isValidEmail(emailValue)) {
+      alert("Please enter a valid email.");
+      return;
+    }
+
+    console.log("Newsletter email submitted:", emailValue);
+    window.location.href = `./contact.html?email=${encodeURIComponent(emailValue)}`;
+  });
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
