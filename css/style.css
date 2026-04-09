@@ -280,33 +280,26 @@ body {
   gap: 12px;
   padding: 15px 20px;
   min-width: 320px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:hover {
+  border-color: #000000;
 }
 
 .input-wrapper img {
   width: 20px;
 }
 
-.input-wrapper {
-  border: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
 
-.input-wrapper:hover {
-  border-color: #000000;
-}
+
+
 
 .newsletter-form .btn-primary {
   padding: 15px 28px;
 }
 
-.input-wrapper {
-  border: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.input-wrapper:hover {
-  border-color: #000000;
-}
 
 .input-wrapper input {
   border: none;
