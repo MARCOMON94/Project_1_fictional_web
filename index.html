@@ -10,19 +10,27 @@
 <body>
 
   <header class="header">
-    <nav class="navbar">
-      <a href="./index.html" class="logo">
-        <img src="./assets/logos/circle.svg" alt="Circle logo">
-      </a>
+   <nav class="navbar">
+  <a href="./index.html" class="logo">
+    <img src="./assets/logos/circle.svg" alt="Circle logo">
+  </a>
 
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-      </ul>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-      <a href="./contact.html" class="contact-btn">Contact Us</a>
-    </nav>
+  <div class="nav-menu">
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./index.html#projects">Projects</a></li>
+      <li><a href="./index.html#services">Services</a></li>
+    </ul>
+
+    <a href="./contact.html" class="contact-btn">Contact Us</a>
+  </div>
+</nav>
   </header>
 
   <main>
@@ -155,6 +163,7 @@
     <img src="./assets/icons/arrow_circle_up_icon_152705.png" alt="Back to top">
   </button>
 
+  <script src="./js/nav.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

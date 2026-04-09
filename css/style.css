@@ -105,26 +105,42 @@ p {
 
 /* ========== HEADER / NAVBAR ========== */
 .header {
-  width: min(88%, var(--container-width));
-  margin: 0 auto;
-  padding: 30px 0 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-light);
+  z-index: 1200;
+  padding: 18px 0 14px;
+}
+
+body {
+  padding-top: 98px;
 }
 
 .navbar {
+  width: min(88%, var(--container-width));
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .logo img {
-  width: 60px;
+  width: 82px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .nav-links a {
@@ -138,6 +154,41 @@ p {
   text-decoration: underline;
 }
 
+.contact-btn {
+  margin-left: 10px;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: 5px auto;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ========== REUSABLE PROJECT CARDS ========== */
 .projects-container {
   display: grid;
@@ -148,12 +199,11 @@ p {
 .project-card {
   background-color: var(--color-white);
   box-shadow: var(--card-shadow);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 10px 10px 0 rgba(41, 46, 71, 0.14);
-  transform: translate(-2px, -2px);
+  box-shadow: 0 12px 26px rgba(13, 15, 24, 0.24);
 }
 
 .project-card img {
@@ -236,6 +286,28 @@ p {
   width: 20px;
 }
 
+.input-wrapper {
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:hover {
+  border-color: #000000;
+}
+
+.newsletter-form .btn-primary {
+  padding: 15px 28px;
+}
+
+.input-wrapper {
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:hover {
+  border-color: #000000;
+}
+
 .input-wrapper input {
   border: none;
   outline: none;
@@ -292,7 +364,7 @@ p {
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
+@media (max-width: 765px) {
   h1 {
     font-size: 2.2rem;
   }
@@ -301,42 +373,59 @@ p {
     font-size: 2rem;
   }
 
+  body {
+    padding-top: 88px;
+  }
+
   .header {
+    padding: 16px 0 12px;
+  }
+
+  .navbar {
     width: min(90%, var(--container-width));
-    padding: 22px 0 10px;
+    position: relative;
   }
 
   section {
     width: min(90%, var(--container-width));
   }
 
-  .footer {
-    width: min(90%, var(--container-width));
-    flex-direction: column;
+  .menu-toggle {
+    display: block;
   }
 
-  .navbar {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 360px);
+    background-color: var(--color-light);
+    padding: 18px 18px 20px;
+    border-radius: 16px;
+    box-shadow: 0 14px 28px rgba(41, 46, 71, 0.16);
+    display: none;
+    flex-direction: column;
     align-items: center;
     gap: 18px;
   }
 
-  .nav-links {
+  .nav-menu.is-open {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 22px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .nav-links a {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
   }
 
   .contact-btn {
-    align-self: auto;
-    padding: 13px 20px;
+    margin-left: 0;
+    padding: 13px 22px;
   }
 
   .newsletter {
@@ -347,10 +436,30 @@ p {
     min-width: 100%;
   }
 
-  .footer-right {
-    grid-template-columns: repeat(2, auto);
-    gap: 20px 30px;
-  }
+  .footer {
+  width: min(90%, var(--container-width));
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 34px;
+}
+
+.footer-left {
+  max-width: 280px;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.footer-right {
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 22px 46px;
+  text-align: center;
+}
 }
 
   /* ========== BACK TO TOP BUTTON ========== */
