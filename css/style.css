@@ -31,6 +31,7 @@ body {
   background-color: var(--color-light);
   color: var(--color-dark);
   line-height: 1.5;
+  padding-top: 98px;
 }
 
 img {
@@ -112,10 +113,6 @@ p {
   background-color: var(--color-light);
   z-index: 1200;
   padding: 18px 0 14px;
-}
-
-body {
-  padding-top: 98px;
 }
 
 .navbar {
@@ -292,15 +289,6 @@ body {
   width: 20px;
 }
 
-
-
-
-
-.newsletter-form .btn-primary {
-  padding: 15px 28px;
-}
-
-
 .input-wrapper input {
   border: none;
   outline: none;
@@ -309,11 +297,15 @@ body {
   font-size: 1rem;
 }
 
+.newsletter-form .btn-primary {
+  padding: 15px 28px;
+}
+
 /* ========== FOOTER ========== */
 .footer {
   width: min(88%, var(--container-width));
   margin: 124px auto 44px;
-  padding: 4px 0 4px;
+  padding: 4px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

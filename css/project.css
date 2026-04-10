@@ -1,24 +1,35 @@
+/* ========== PROJECT PAGE BASE ========== */
+.project-hero,
+.project-content,
+.other-projects {
+  width: min(88%, 980px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ========== PROJECT HERO ========== */
 .project-hero {
-  margin-top: 60px;
+  margin-top: 34px;
 }
 
 .project-hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 30px;
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  line-height: 1.06;
+  margin-bottom: 18px;
   max-width: 700px;
 }
 
 .project-meta {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  margin-bottom: 60px;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 28px;
 }
 
 .project-meta p {
-  font-size: 1.1rem;
+  font-size: 0.98rem;
+  line-height: 1.4;
 }
 
 #project-description {
@@ -26,69 +37,155 @@
 }
 
 #project-date {
-  color: var(--color-dark);
-  font-weight: 500;
+  color: #8b90a7;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 #project-image {
   width: 100%;
-  max-height: 500px;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
+  box-shadow: 0 14px 34px rgba(236, 188, 255, 0.34);
 }
 
 /* ========== PROJECT CONTENT ========== */
 .project-content {
-  margin-top: 80px;
+  margin-top: 44px;
 }
 
 #project-content-text {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--color-text);
+  font-size: 0.96rem;
+  line-height: 1.85;
+  color: var(--color-dark);
 }
 
 /* ========== OTHER PROJECTS ========== */
 .other-projects {
-  margin-top: 120px;
+  margin-top: 84px;
 }
 
 .other-projects h2 {
-  margin-bottom: 50px;
+  margin-bottom: 34px;
+  color: var(--color-primary);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+/* aquí NO redefinimos las cards para que se vean igual que en index */
+.other-projects .projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 38px;
+}
+
+.other-projects .project-card {
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.other-projects .project-card:hover {
+  box-shadow: 0 12px 26px rgba(13, 15, 24, 0.24);
+}
+
+.other-projects .project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.other-projects .project-card-content {
+  padding: 26px 30px 30px;
+  min-height: auto;
+}
+
+.other-projects .project-card-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.other-projects .project-card-content p {
+  font-size: 0.98rem;
+  margin-bottom: 26px;
+}
+
+.other-projects .project-card-content a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.other-projects .project-card-content a:hover {
+  text-decoration: underline;
+}
+
+/* ========== PROJECT PAGE NEWSLETTER ========== */
+.newsletter {
+  width: min(88%, 980px);
+  margin: 96px auto 0;
+}
+
+/* dejamos la newsletter igual que la global de index,
+   solo ajustamos tamaño para que no quede tan enorme */
+.newsletter h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.newsletter p {
+  font-size: 1.2rem;
 }
 
 /* ========== RESPONSIVE PROJECT ========== */
-@media (max-width: 992px) {
-  .project-hero h1 {
-    font-size: 2.8rem;
+@media (max-width: 900px) {
+  .project-hero,
+  .project-content,
+  .other-projects,
+  .newsletter {
+    width: min(90%, 980px);
   }
 
   .project-meta {
     flex-direction: column;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    gap: 6px;
   }
 
-  #project-image {
-    max-height: none;
+  #project-date {
+    white-space: normal;
+  }
+
+  .other-projects .project-card img {
+    height: 200px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 765px) {
   .project-hero {
-    margin-top: 30px;
+    margin-top: 22px;
   }
 
   .project-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.35rem;
   }
 
-  .project-content,
+  .project-content {
+    margin-top: 34px;
+  }
+
   .other-projects {
-    margin-top: 90px;
+    margin-top: 68px;
   }
 
-  #project-content-text {
-    font-size: 1rem;
-    line-height: 1.8;
+  #project-content-text,
+  .project-meta p,
+  .other-projects .project-card-content p {
+    font-size: 0.94rem;
+  }
+
+  .other-projects .project-card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .newsletter {
+    margin-top: 80px;
   }
 }
